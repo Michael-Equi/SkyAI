@@ -13,6 +13,7 @@ else:
 arr = []
 with open(filepath, "r") as read_file:
     data = json.load(read_file)
+    print(data)
     string = json.dumps(data, indent=2)
     # print(string) # for visualizing the json better
     for item in data:
