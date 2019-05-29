@@ -24,7 +24,7 @@ data_gen_args = dict(rotation_range=180,
                      zoom_range=0.05,
                      horizontal_flip=True,
                      fill_mode='nearest')
-myGene = trainGenerator(20, 'train', 'image', 'label', data_gen_args, save_to_dir=None, image_color_mode="rgb",
+myGene = trainGenerator(5, 'train', 'image', 'label', data_gen_args, save_to_dir=None, image_color_mode="rgb",
                         mask_color_mode="rgb", flag_multi_class=False, num_class=3, target_size=(256, 256))
 model = unet(input_size=(256, 256, 3))
 model_checkpoint = ModelCheckpoint('sky.hdf5', monitor='loss', verbose=1, save_best_only=True)
