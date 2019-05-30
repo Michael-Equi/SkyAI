@@ -28,7 +28,7 @@ myGene = trainGenerator(5, 'train', 'image', 'label', data_gen_args, save_to_dir
                         mask_color_mode="rgb", flag_multi_class=False, num_class=3, target_size=(256, 256))
 model = unet(input_size=(256, 256, 3))
 model_checkpoint = ModelCheckpoint('sky.hdf5', monitor='loss', verbose=1, save_best_only=True)
-model.fit_generator(myGene, steps_per_epoch=2000, epochs=5, callbacks=[model_checkpoint])
+model.fit_generator(myGene, steps_per_epoch=2000, epochs=25, callbacks=[model_checkpoint])
 
 # ### Train with npy file
 
